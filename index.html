@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>For You ❤️</title>
+
+<style>
+
+body{
+    margin:0;
+    padding:20px;
+    font-family:Arial,sans-serif;
+    background:#111;
+    color:white;
+    text-align:center;
+}
+
+#content{
+    display:none;
+}
+
+input{
+    padding:10px;
+    width:220px;
+}
+
+button{
+    padding:10px 20px;
+    margin-top:10px;
+    cursor:pointer;
+}
+
+img{
+    width:300px;
+    max-width:90%;
+    border-radius:20px;
+    margin-top:20px;
+}
+
+.message{
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="login">
+
+<h1>💌 A Little Surprise</h1>
+
+<p>Enter Password</p>
+
+<input type="password" id="password">
+
+<br>
+
+<button onclick="checkPassword()">
+Open ❤️
+</button>
+
+</div>
+
+<div id="content">
+
+<h1>Never Lose Your Inner Child ❤️</h1>
+
+<div class="message">
+
+<p>
+No matter how old you grow,
+please never lose the little child inside you.
+</p>
+
+<p>
+The smile from your childhood,
+the curiosity,
+the happiness,
+and the sparkle are still there today.
+</p>
+
+<p>
+Stay happy.
+Stay playful.
+Stay wonderful.
+</p>
+
+<p>
+At any cost,
+don't lose your childness.
+</p>
+
+<p>
+❤️
+</p>
+
+</div>
+
+<h2>Then</h2>
+
+<img src="Child.jpg">
+
+<h2>Now</h2>
+
+<img src="Adult.jpg">
+
+</div>
+
+<script>
+
+function checkPassword(){
+
+var pass =
+document.getElementById("password").value;
+
+if(pass === "zwanzig"){
+
+document.getElementById("login").style.display="none";
+
+document.getElementById("content").style.display="block";
+
+}
+else{
+
+alert("Wrong password");
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
