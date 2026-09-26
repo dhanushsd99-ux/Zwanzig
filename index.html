@@ -1,64 +1,202 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>For You ❤️</title>
 
 <style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
 body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    text-align:center;
-    color:white;
-    background:url('bg1.jpg');
-    background-size:cover;
-    background-position:center;
+font-family:'Segoe UI',sans-serif;
+overflow-x:hidden;
+color:white;
+background:black;
 }
 
-.container{
-    background:rgba(0,0,0,0.7);
-    min-height:100vh;
-    padding:20px;
+#bg{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background-size:cover;
+background-position:center;
+z-index:-2;
+transition:all 2s ease;
 }
 
-#content{
-    display:none;
+#overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.65);
+z-index:-1;
+}
+
+#login{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+padding:20px;
+text-align:center;
+}
+
+.login-box{
+background:rgba(255,255,255,0.12);
+padding:30px;
+border-radius:25px;
+backdrop-filter:blur(15px);
 }
 
 input{
-    padding:10px;
-    width:250px;
+padding:15px;
+width:260px;
+border:none;
+border-radius:12px;
+margin-top:15px;
+font-size:16px;
 }
 
 button{
-    margin-top:10px;
-    padding:10px 20px;
+padding:15px 30px;
+margin-top:15px;
+border:none;
+border-radius:12px;
+background:#ff4d88;
+color:white;
+font-size:16px;
+cursor:pointer;
 }
 
-img{
-    width:300px;
-    max-width:90%;
-    border-radius:20px;
-    margin-top:20px;
+#content{
+display:none;
+padding:20px;
 }
+
+.hero{
+text-align:center;
+padding-top:40px;
+animation:fadeIn 2s;
+}
+
+.hero h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:18px;
+opacity:0.9;
+}
+
+.card{
+max-width:800px;
+margin:30px auto;
+padding:25px;
+background:rgba(255,255,255,0.12);
+border-radius:25px;
+backdrop-filter:blur(15px);
+line-height:1.9;
+font-size:18px;
+}
+
+.timeline{
+display:flex;
+flex-direction:column;
+gap:40px;
+margin-top:40px;
+}
+
+.photo-card{
+background:rgba(255,255,255,0.12);
+border-radius:25px;
+padding:20px;
+backdrop-filter:blur(15px);
+max-width:420px;
+margin:auto;
+}
+
+.photo-card img{
+width:100%;
+border-radius:20px;
+box-shadow:0 0 30px rgba(255,255,255,0.2);
+}
+
+.label{
+font-size:24px;
+margin-bottom:15px;
+}
+
+.footer{
+text-align:center;
+font-size:24px;
+padding:40px 20px;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.heart{
+position:fixed;
+color:#ff5c93;
+font-size:24px;
+animation:floatUp 6s linear forwards;
+pointer-events:none;
+}
+
+@keyframes floatUp{
+from{
+transform:translateY(0);
+opacity:1;
+}
+to{
+transform:translateY(-100vh);
+opacity:0;
+}
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<div id="bg"></div>
+<div id="overlay"></div>
 
 <div id="login">
+
+<div class="login-box">
 
 <h1>💌 A Little Surprise</h1>
 
 <p>Enter Password</p>
 
-<input type="password" id="password">
+<input
+type="password"
+id="password"
+placeholder="Password">
 
-<br><br>
+<br>
 
 <button onclick="checkPassword()">
 Open ❤️
@@ -66,22 +204,84 @@ Open ❤️
 
 </div>
 
+</div>
+
 <div id="content">
+
+<div class="hero">
 
 <h1>Never Lose Your Inner Child ❤️</h1>
 
 <p>
-No matter how old you grow,
-please never lose the little child inside you.
+Some things should never change...
 </p>
 
-<h2>Then ✨</h2>
+</div>
+
+<div class="card">
+
+No matter how old you become,
+
+please never lose the little child inside you.
+
+The same curiosity.
+
+The same happiness.
+
+The same innocent smile.
+
+The same sparkle.
+
+When I see your childhood photo,
+and when I see you today,
+I realize something beautiful...
+
+That wonderful person is still there.
+
+Life changes.
+
+Years pass.
+
+But the light inside you remains.
+
+Please keep smiling.
+
+Keep dreaming.
+
+Keep being the amazing person you are.
+
+❤️
+
+</div>
+
+<div class="timeline">
+
+<div class="photo-card">
+
+<div class="label">
+✨ Then
+</div>
 
 <img src="child.jpg">
 
-<h2>Now ❤️</h2>
+</div>
+
+<div class="photo-card">
+
+<div class="label">
+❤️ Now
+</div>
 
 <img src="adult.jpg">
+
+</div>
+
+</div>
+
+<div class="footer">
+
+Promise me you'll never lose
+that beautiful child inside you ❤️
 
 </div>
 
@@ -91,22 +291,68 @@ please never lose the little child inside you.
 
 function checkPassword(){
 
-var pass =
-document.getElementById("password").value;
+const pass =
+document.getElementById("password").value.trim();
 
 if(pass === "zwanzig"){
 
-document.getElementById("login").style.display = "none";
+document.getElementById("login").style.display="none";
 
-document.getElementById("content").style.display = "block";
+document.getElementById("content").style.display="block";
 
 }else{
 
-alert("Wrong password");
+alert("Wrong password ❤️");
 
 }
 
 }
+
+const backgrounds=[
+"bg1.jpg",
+"bg2.jpg",
+"bg3.jpg",
+"bg4.jpg",
+"bg5.jpg"
+];
+
+let current=0;
+
+function changeBackground(){
+
+document.getElementById("bg").style.backgroundImage=
+`url('${backgrounds[current]}')`;
+
+current++;
+
+if(current>=backgrounds.length){
+current=0;
+}
+
+}
+
+changeBackground();
+
+setInterval(changeBackground,5000);
+
+setInterval(()=>{
+
+const heart=document.createElement("div");
+
+heart.innerHTML="❤️";
+
+heart.classList.add("heart");
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.bottom="-20px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+
+},700);
 
 </script>
 
