@@ -1,74 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>For You ❤️</title>
 
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
 body{
+    margin:0;
     font-family:Arial,sans-serif;
-    color:white;
     text-align:center;
-    overflow-x:hidden;
-    background:#111;
-    min-height:100vh;
+    color:white;
+    background:url('bg1.jpg');
+    background-size:cover;
+    background-position:center;
 }
 
-.overlay{
+.container{
+    background:rgba(0,0,0,0.7);
     min-height:100vh;
-    background:rgba(0,0,0,0.65);
     padding:20px;
-}
-
-#login{
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
 }
 
 #content{
     display:none;
 }
 
-h1{
-    margin-bottom:20px;
-}
-
 input{
-    width:280px;
-    max-width:90%;
-    padding:12px;
-    border:none;
-    border-radius:10px;
-    margin-top:10px;
+    padding:10px;
+    width:250px;
 }
 
 button{
-    margin-top:15px;
-    padding:12px 25px;
-    border:none;
-    border-radius:10px;
-    background:#ff4d88;
-    color:white;
-    cursor:pointer;
-    font-size:16px;
+    margin-top:10px;
+    padding:10px 20px;
 }
 
-.message{
-    max-width:700px;
-    margin:20px auto;
-    padding:20px;
-    background:rgba(255,255,255,0.1);
+img{
+    width:300px;
+    max-width:90%;
     border-radius:20px;
-    line
+    margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div id="login">
+
+<h1>💌 A Little Surprise</h1>
+
+<p>Enter Password</p>
+
+<input type="password" id="password">
+
+<br><br>
+
+<button onclick="checkPassword()">
+Open ❤️
+</button>
+
+</div>
+
+<div id="content">
+
+<h1>Never Lose Your Inner Child ❤️</h1>
+
+<p>
+No matter how old you grow,
+please never lose the little child inside you.
+</p>
+
+<h2>Then ✨</h2>
+
+<img src="child.jpg">
+
+<h2>Now ❤️</h2>
+
+<img src="adult.jpg">
+
+</div>
+
+</div>
+
+<script>
+
+function checkPassword(){
+
+var pass =
+document.getElementById("password").value;
+
+if(pass === "zwanzig"){
+
+document.getElementById("login").style.display = "none";
+
+document.getElementById("content").style.display = "block";
+
+}else{
+
+alert("Wrong password");
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
