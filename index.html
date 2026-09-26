@@ -112,6 +112,15 @@ line-height:1.9;
 font-size:18px;
 }
 
+.signature{
+display:block;
+margin-top:10px;
+font-size:22px;
+font-weight:600;
+letter-spacing:1px;
+color:#ff5c93;
+}
+
 .timeline{
 display:flex;
 flex-direction:column;
@@ -158,7 +167,6 @@ transform:translateY(0);
 
 .heart{
 position:fixed;
-color:#ff5c93;
 font-size:24px;
 animation:floatUp 6s linear forwards;
 pointer-events:none;
@@ -218,6 +226,18 @@ Some things should never change...
 
 </div>
 
+<div class="timeline">
+
+<div class="photo-card">
+
+<div class="label">
+✨ Then
+</div>
+
+<img src="child.jpg">
+
+</div>
+
 <div class="card">
 
 No matter how old you become,
@@ -250,19 +270,7 @@ Keep dreaming.
 
 Keep being the amazing person you are.
 
-❤️
-
-</div>
-
-<div class="timeline">
-
-<div class="photo-card">
-
-<div class="label">
-✨ Then
-</div>
-
-<img src="child.jpg">
+<span class="signature">D</span>
 
 </div>
 
@@ -335,16 +343,19 @@ changeBackground();
 
 setInterval(changeBackground,5000);
 
+const floatIcons=["❤️","❤️","❤️","✨","⭐"];
+
 setInterval(()=>{
 
 const heart=document.createElement("div");
 
-heart.innerHTML="❤️";
+heart.innerHTML=floatIcons[Math.floor(Math.random()*floatIcons.length)];
 
 heart.classList.add("heart");
 
 heart.style.left=Math.random()*100+"vw";
 heart.style.bottom="-20px";
+heart.style.fontSize=(18+Math.random()*16)+"px";
 
 document.body.appendChild(heart);
 
