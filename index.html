@@ -8,47 +8,108 @@
 
 <style>
 
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
 body{
-    margin:0;
-    padding:20px;
-    font-family:Arial,sans-serif;
-    background:#111;
-    color:white;
-    text-align:center;
+font-family:Arial,sans-serif;
+color:white;
+text-align:center;
+overflow-x:hidden;
+transition:all 1.5s;
+}
+
+.overlay{
+min-height:100vh;
+background:rgba(0,0,0,0.65);
+padding:25px;
+}
+
+#login{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
 }
 
 #content{
-    display:none;
+display:none;
 }
 
-input{
-    padding:10px;
-    width:220px;
-}
-
-button{
-    padding:10px 20px;
-    margin-top:10px;
-    cursor:pointer;
-}
-
-img{
-    width:300px;
-    max-width:90%;
-    border-radius:20px;
-    margin-top:20px;
+h1{
+font-size:42px;
+margin-bottom:20px;
 }
 
 .message{
-    max-width:700px;
-    margin:auto;
-    line-height:1.8;
+max-width:700px;
+margin:auto;
+font-size:20px;
+line-height:1.8;
+background:rgba(255,255,255,0.12);
+padding:25px;
+border-radius:20px;
+backdrop-filter:blur(8px);
+}
+
+input{
+padding:12px;
+width:250px;
+border:none;
+border-radius:10px;
+margin-top:10px;
+}
+
+button{
+padding:12px 25px;
+margin-top:15px;
+border:none;
+border-radius:12px;
+background:#ff4d88;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+.photo{
+margin-top:35px;
+}
+
+.photo img{
+width:90%;
+max-width:350px;
+border-radius:25px;
+box-shadow:0 0 20px rgba(255,255,255,0.3);
+}
+
+.label{
+font-size:28px;
+margin-top:15px;
+margin-bottom:10px;
+font-weight:bold;
+}
+
+.footer{
+margin-top:40px;
+font-size:24px;
+}
+
+.heart{
+font-size:60px;
+margin-bottom:20px;
 }
 
 </style>
+
 </head>
 
 <body>
+
+<div class="overlay">
 
 <div id="login">
 
@@ -56,9 +117,10 @@ img{
 
 <p>Enter Password</p>
 
-<input type="password" id="password">
-
-<br>
+<input
+type="password"
+id="password"
+placeholder="Password">
 
 <button onclick="checkPassword()">
 Open ❤️
@@ -68,46 +130,69 @@ Open ❤️
 
 <div id="content">
 
-<h1>Never Lose Your Inner Child ❤️</h1>
+<div class="heart">❤️</div>
+
+<h1>Never Lose Your Inner Child</h1>
 
 <div class="message">
 
-<p>
 No matter how old you grow,
-please never lose the little child inside you.
-</p>
 
-<p>
+please never lose the little child inside you.
+
 The smile from your childhood,
 the curiosity,
 the happiness,
 and the sparkle are still there today.
-</p>
 
-<p>
+Life may change.
+
+Years may pass.
+
+But I hope you always keep that beautiful light inside you.
+
 Stay happy.
+
 Stay playful.
+
 Stay wonderful.
-</p>
 
-<p>
 At any cost,
-don't lose your childness.
-</p>
 
-<p>
+don't lose your childness.
+
 ❤️
-</p>
 
 </div>
 
-<h2>Then</h2>
+<div class="photo">
+
+<div class="label">
+Then ✨
+</div>
 
 <img src="child.jpg">
 
-<h2>Now</h2>
+</div>
+
+<div class="photo">
+
+<div class="label">
+Now ❤️
+</div>
 
 <img src="adult.jpg">
+
+</div>
+
+<div class="footer">
+
+Promise me you'll never lose
+that beautiful child inside you ❤️
+
+</div>
+
+</div>
 
 </div>
 
@@ -115,7 +200,7 @@ don't lose your childness.
 
 function checkPassword(){
 
-var pass =
+let pass =
 document.getElementById("password").value;
 
 if(pass === "zwanzig"){
@@ -127,13 +212,35 @@ document.getElementById("content").style.display="block";
 }
 else{
 
-alert("Wrong password");
+alert("Wrong password ❤️");
 
 }
 
 }
 
-</script>
+const images = [
+"bg1.jpg",
+"bg2.jpg",
+"bg3.jpg",
+"bg4.jpg",
+"bg5.jpg"
+];
 
-</body>
-</html>
+let current = 0;
+
+function changeBackground(){
+
+document.body.style.background =
+`url('${images[current]}') center center / cover no-repeat`;
+
+current++;
+
+if(current >= images.length){
+current = 0;
+}
+
+}
+
+changeBackground();
+
+setInterval(
